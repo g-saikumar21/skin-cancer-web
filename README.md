@@ -71,10 +71,10 @@ npm install
 npm start
   ```
 ##Usage
-1.Go to the Upload section.
-2.Click Choose Image to *upload* a skin lesion photo.
-3.Select the body part (optional) for more context.
-4.Click *Submit* to get instant prediction results.
+1.Go to the Upload section.   
+2.Click Choose Image to *upload* a skin lesion photo.   
+3.Select the body part (optional) for more context.   
+4.Click *Submit* to get instant prediction results.   
 5.Explore the *Info* and *Know Us* sections to learn more about the project.
 
 ##Team
