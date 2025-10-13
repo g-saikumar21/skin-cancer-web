@@ -63,3 +63,27 @@ Users can:
    ```bash
    git clone https://github.com/your-username/skin-cancer-detection.git
    cd skin-cancer-detection
+   ```
+##Install dependencies:
+  ```bash
+npm install
+#Run the app:
+npm start
+  ```
+##Usage
+1.Go to the Upload section.
+2.Click Choose Image to *upload* a skin lesion photo.
+3.Select the body part (optional) for more context.
+4.Click *Submit* to get instant prediction results.
+5.Explore the *Info* and *Know Us* sections to learn more about the project.
+
+##Team
+ - Vignesh – Full-stack developer & deep learning integration
+ - G Sai Kumar – Frontend & UI/UX design
+ - Shreepathi – Backend & model integration
+ - Suhas S – Data preprocessing & evaluation
+
+**Guided by:** Mr. Vijaykumar Dudhanikar, Assistant Professor, Dept. of CSE, A.J. Institute of Engineering and Technology
+
+##License
+This project is licensed under the MIT License.
