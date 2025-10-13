@@ -1,0 +1,445 @@
+/* ===== Global Styles ===== */
+body {
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f7f9;
+  color: #333;
+}
+
+a {
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+}
+
+/* ===== Header ===== */
+.app-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: #0077b6;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.navbar a {
+  color: white;
+  margin-left: 1.5rem;
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.navbar a:hover {
+  color: #00b4d8;
+}
+
+.know-us-button {
+  margin-left: 1rem;
+  background-color: #e63946;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.know-us-button:hover {
+  background-color: #d62828;
+}
+
+/* ===== Hero Section ===== */
+.hero-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  color: white;
+  text-align: center;
+  padding: 4rem 1rem;
+  border-radius: 0 0 50% 50% / 0 0 10% 10%;
+}
+
+.hero-section h2 {
+  font-size: 2.2rem;
+  margin-bottom: 1rem;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.hero-button {
+  padding: 0.8rem 2rem;
+  border-radius: 8px;
+  background-color: #e63946;
+  color: white;
+  font-weight: 600;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.hero-button:hover {
+  background-color: #d62828;
+  transform: translateY(-2px);
+}
+
+/* ===== Main Content ===== */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 3rem 1rem;
+}
+
+/* ===== Upload Form (Appealing Version) ===== */
+.upload-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background: linear-gradient(145deg, #ffffff, #e0f7fa);
+  padding: 1.5rem 2rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1), 0 6px 6px rgba(0,0,0,0.05);
+  max-width: 420px;
+  margin: 1rem auto;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.upload-form:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 15px 25px rgba(0,0,0,0.15), 0 8px 8px rgba(0,0,0,0.08);
+}
+
+/* File Input */
+.upload-form input[type="file"] {
+  display: none;
+}
+
+.upload-form label {
+  background: linear-gradient(135deg, #0077b6, #00b4d8);
+  color: white;
+  padding: 0.7rem 1.4rem;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+  text-align: center;
+}
+
+.upload-form label:hover {
+  background: linear-gradient(135deg, #00b4d8, #0077b6);
+  transform: translateY(-1px);
+}
+
+/* Image Preview */
+.preview-container {
+  width: 140px;
+  height: 140px;
+  overflow: hidden;
+  border-radius: 16px;
+  border: 2px solid #0077b6;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.preview-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Dropdown (Minimized Body Part Selector) */
+.skin-type-select {
+  padding: 0.4rem 0.5rem;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  font-size: 0.85rem;
+  width: 80%;
+  transition: border-color 0.3s;
+}
+
+.skin-type-select:focus {
+  border-color: #0077b6;
+  outline: none;
+}
+
+/* Buttons Container */
+.buttons-container {
+  display: flex;
+  gap: 0.7rem;
+  width: 100%;
+}
+
+.upload-form button {
+  background-color: #e63946;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 12px;
+  font-weight: 500;
+  flex: 1;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.upload-form button:hover {
+  background-color: #d62828;
+  transform: translateY(-1px);
+}
+
+.reset-btn {
+  background-color: #0077b6;
+}
+
+.reset-btn:hover {
+  background-color: #00b4d8;
+}
+
+/* Small Note */
+.upload-note {
+  font-size: 0.8rem;
+  color: #555;
+  margin-top: 0.5rem;
+  text-align: center;
+}
+
+/* ===== Result Card ===== */
+.result-card {
+  max-width: 500px;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  border-radius: 16px;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+  text-align: center;
+}
+
+.result-card.danger { border-left: 6px solid #e63946; }
+.result-card.safe { border-left: 6px solid #2a9d8f; }
+
+.result-card h2 {
+  margin-bottom: 1rem;
+}
+
+.result-card .prediction {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.result-card .advice {
+  margin-top: 0.8rem;
+  font-size: 1rem;
+}
+
+/* ===== Info Section ===== */
+.info-section {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  padding: 3rem 1rem;
+}
+
+.info-card {
+  background-color: white;
+  padding: 2rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  max-width: 300px;
+  text-align: center;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.info-card h3 {
+  margin-bottom: 1rem;
+  color: #0077b6;
+}
+
+/* ===== Know Us Overlay ===== */
+.know-us-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.know-us-container {
+  background-color: #e0f7fa;
+  padding: 2rem;
+  border-radius: 16px;
+  max-width: 900px;
+  width: 90%;
+  max-height: 90%;
+  overflow-y: auto;
+  position: relative;
+}
+
+.know-us-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.know-us-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.know-us-tabs button {
+  padding: 0.6rem 1.2rem;
+  border-radius: 8px;
+  background-color: #00b4d8;
+  color: white;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.know-us-tabs button.active {
+  background-color: #0077b6;
+}
+
+.know-us-content {
+  background-color: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+  line-height: 1.5rem;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  background-color: #0077b6;
+  color: white;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 0.9rem;
+  margin-top: 2rem;
+}
+
+/* ===== Floating Cells (Bubbles + Virus) ===== */
+.floating-cells {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: -1;
+  overflow: hidden;
+}
+
+/* Bubbles */
+.cell {
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background-color: rgba(0, 180, 216, 0.3);
+  border-radius: 50%;
+  animation: float 20s linear infinite;
+}
+
+/* Virus */
+.virus {
+  position: absolute;
+  width: 18px;
+  height: 18px;
+  background-color: rgba(230, 57, 70, 0.5);
+  border-radius: 50%;
+  box-shadow:
+    0 -4px 0 #e63946,
+    0 4px 0 #e63946,
+    -4px 0 0 #e63946,
+    4px 0 0 #e63946,
+    -3px -3px 0 #e63946,
+    3px -3px 0 #e63946,
+    -3px 3px 0 #e63946,
+    3px 3px 0 #e63946;
+  animation: float 25s linear infinite, rotateVirus 8s linear infinite;
+}
+
+/* Floating keyframes */
+@keyframes float {
+  0% { transform: translateY(0) translateX(0); }
+  50% { transform: translateY(-50px) translateX(30px); }
+  100% { transform: translateY(0) translateX(0); }
+}
+
+@keyframes rotateVirus {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+  .info-section {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .navbar {
+    display: none;
+  }
+
+  .know-us-tabs {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .know-us-container {
+    width: 95%;
+    padding: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .preview-container {
+    width: 100px;
+    height: 100px;
+  }
+
+  .upload-form {
+    max-width: 90%;
+  }
+
+  .buttons-container {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .buttons-container button {
+    width: 100%;
+  }
+}
