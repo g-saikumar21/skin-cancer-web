@@ -1,9 +1,11 @@
 import React, { useState } from "react";
+import axios from "axios";
 
 function UploadForm({ setResult }) {
   const [selectedFile, setSelectedFile] = useState(null);
   const [preview, setPreview] = useState(null);
   const [bodyPart, setBodyPart] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const handleFileChange = (e) => {
     const file = e.target.files[0];
@@ -13,19 +15,26 @@ function UploadForm({ setResult }) {
     }
   };
 
-  const handleBodyPartChange = (e) => {
-    setBodyPart(e.target.value);
-  };
+  const handleBodyPartChange = (e) => setBodyPart(e.target.value);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!selectedFile) {
-      alert("Please choose an image first!");
-      return;
+    if (!selectedFile) return alert("Please upload a dermoscopic image first.");
+
+    setLoading(true);
+    const formData = new FormData();
+    formData.append("file", selectedFile);
+
+    try {
+      const response = await axios.post("http://127.0.0.1:8000/predict", formData, {
+        headers: { "Content-Type": "multipart/form-data" },
+      });
+      setResult(response.data);
+    } catch (err) {
+      alert("Error analyzing image. Please try again.");
+    } finally {
+      setLoading(false);
     }
-    // Mock prediction logic, replace with actual API call
-    const mockResult = Math.random() > 0.5 ? "Cancer Detected" : "No Cancer";
-    setResult(mockResult);
   };
 
   const handleReset = () => {
@@ -37,12 +46,8 @@ function UploadForm({ setResult }) {
 
   return (
     <form className="upload-form" onSubmit={handleSubmit}>
-      <input
-        type="file"
-        id="file-input"
-        accept="image/*"
-        onChange={handleFileChange}
-      />
+      <h3>Upload Dermoscopic Image</h3>
+      <input type="file" id="file-input" accept="image/*" onChange={handleFileChange} />
       <label htmlFor="file-input">Choose Image</label>
 
       {preview && (
@@ -65,14 +70,16 @@ function UploadForm({ setResult }) {
       </select>
 
       <div className="buttons-container">
-        <button type="submit">Check</button>
+        <button type="submit" disabled={loading}>
+          {loading ? "Analyzing..." : "Analyze Image"}
+        </button>
         <button type="button" className="reset-btn" onClick={handleReset}>
           Reset
         </button>
       </div>
 
       <p className="upload-note">
-        Only upload clear images of skin lesions. Supported formats: JPG, PNG.
+        Upload clear dermoscopic images. Supported formats: JPG, PNG.
       </p>
     </form>
   );
